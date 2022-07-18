@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<title>Registration Form</title>
+<link rel="stylesheet" href="css/custom.css">
+<style>
+    body{
+        background: #3c6060;
+    }
+    .outer_form_div{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="outer_form_div">
+                    <div class="w-100">
+                        <h3>Output</h3>
+                        <h4 id="two_th"></h4>
+                        <h4 id="five_hd"></h4>
+                        <h4 id="two_hd"></h4> 
+                        <h4 id="hd"></h4> 
+                        <h4 id="fifty"></h4> 
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
+<script>
+    var amount = prompt("enter amount");
+    if (amount >= 50 && amount % 50 == 0) {
+        var note_2000 = Math.floor(amount / 2000);
+        var rem_2000 = Math.floor(amount % 2000);
+
+        var note_500 = Math.floor(rem_2000 / 500);
+        var rem_500 = Math.floor(rem_2000 % 500);
+
+        var note_200 = Math.floor(rem_500 / 200);
+        var rem_200 = Math.floor(rem_500 % 200);
+
+        var note_100 = Math.floor(rem_200 / 100);
+        var rem_100 = Math.floor(rem_200 % 100);
+
+        var note_50 = Math.floor(rem_100 / 50);
+        var rem_50 = Math.floor(rem_100 % 50);
+
+        console.log("Minimum: \n")
+        if (note_2000 > 0) {
+            console.log("2000 note = " + note_2000 + "\n");
+            document.getElementById('two_th').innerHTML = "2000 note = " + note_2000 + "\n";
+        }
+        if (note_500 > 0) {
+            console.log("500 note = " + note_500 + "\n");
+            document.getElementById('five_hd').innerHTML = "500 note = " + note_500 + "\n";
+        }
+        if (note_200 > 0) {
+            console.log("200 note = " + note_200 + "\n");
+            document.getElementById('two_hd').innerHTML = "200 note = " + note_200 + "\n";
+        }
+        if (note_100 > 0) {
+            console.log("100 note = " + note_100 + "\n");
+            document.getElementById('hd').innerHTML = "100 note = " + note_100 + "\n";
+        }
+        if (note_50 > 0) {
+            console.log("50 note = " + note_50 + "\n");
+            document.getElementById('fifty').innerHTML = "50 note = " + note_2000 + "\n";
+        }
+        var max_note = amount / 50;
+        console.log("\n" + "maximum:" + "\n" + "50 rs note = " + max_note);
+    }
+
+    else {
+        alert("Invalid Amount" + "\n" + "Please enter the amount multiple of 50")
+    }
+
+</script>
